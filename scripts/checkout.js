@@ -14,7 +14,10 @@ cart.forEach((cartItem) => {
     }
   });
 
- 
+ if (!matchingProduct) {
+    console.warn(`Skipping cart item with invalid product ID: ${productId}`);
+    return;  // Skip this item to prevent errors
+  }
 
   cartSummaryHTML +=
   `
